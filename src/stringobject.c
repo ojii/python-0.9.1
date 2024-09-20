@@ -275,13 +275,20 @@ static sequence_methods string_as_sequence = {
 	0,	/*tp_ass_slice*/
 };
 
+static void
+string_dealloc(v)
+	register stringobject *v;
+{
+    free(v);
+}
+
 typeobject Stringtype = {
 	OB_HEAD_INIT(&Typetype)
 	0,
 	"string",
 	sizeof(stringobject),
 	sizeof(char),
-	free,		/*tp_dealloc*/
+	string_dealloc,		/*tp_dealloc*/
 	stringprint,	/*tp_print*/
 	0,		/*tp_getattr*/
 	0,		/*tp_setattr*/

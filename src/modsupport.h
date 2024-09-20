@@ -27,3 +27,8 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 extern object *initmodule PROTO((char *, struct methodlist *));
 extern int getintarg(object *v, int *a);
 extern void fatal(char *msg);
+int getnoarg(object *v);
+int getstrarg(object *v, object **a);
+int getstrstrarg(object *v, object **a, object **b);
+int getstrintarg(object *v,	object **a, int *b);
+int getlonglongargs(object *v, long *a, long *b);

@@ -842,6 +842,7 @@ int
 reglexec(prog, string, offset)
 register regexp *prog;
 register char *string;
+int offset;
 {
 	register char *s;
 	extern char *strchr();

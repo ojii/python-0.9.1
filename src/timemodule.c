@@ -64,6 +64,8 @@ sleep_catcher(sig)
 	longjmp(sleep_intr, 1);
 }
 
+static int sleep(int msecs);
+
 static object *
 time_sleep(self, args)
 	object *self;
@@ -164,7 +166,7 @@ inittime()
 
 #define MacTicks	(* (long *)0x16A)
 
-static
+static int
 sleep(msecs)
 	int msecs;
 {

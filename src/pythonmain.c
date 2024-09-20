@@ -38,6 +38,11 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "ceval.h"
 #include "pythonrun.h"
 #include "import.h"
+#include "config.h"
+#include "intrcheck.h"
+#include "import.h"
+#include "bltinmodule.h"
+#include "pythonmain.h"
 
 extern char *getpythonpath();
 
@@ -47,7 +52,7 @@ extern grammar gram; /* From graminit.c */
 int debugging; /* Needed by parser.c */
 #endif
 
-main(argc, argv)
+int main(argc, argv)
 	int argc;
 	char **argv;
 {
@@ -386,7 +391,7 @@ goaway(sts)
 	/*NOTREACHED*/
 }
 
-static
+static int
 finaloutput()
 {
 #ifdef TRACE_REFS

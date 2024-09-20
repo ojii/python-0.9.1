@@ -25,6 +25,8 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 /* Traceback implementation */
 
 #include "allobjects.h"
+#include "intrcheck.h"
+#include "sysmodule.h"
 
 #include "compile.h"
 #include "frameobject.h"

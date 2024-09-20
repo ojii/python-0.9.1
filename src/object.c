@@ -25,6 +25,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 /* Generic object operations; and implementation of None (NoObject) */
 
 #include "allobjects.h"
+#include "intrcheck.h"
 
 #ifdef REF_DEBUG
 long ref_total;

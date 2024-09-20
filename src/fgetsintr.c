@@ -36,6 +36,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "errcode.h"
 #include "sigtype.h"
 #include "fgetsintr.h"
+#include "intrcheck.h"
 
 #ifndef AMOEBA
 #define sig_block()	/*empty*/

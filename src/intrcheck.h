@@ -1,0 +1,2 @@
+int intrcheck();
+void initintr();

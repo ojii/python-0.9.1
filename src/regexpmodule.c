@@ -177,7 +177,7 @@ static struct methodlist regexp_global_methods[] = {
 	{NULL,		NULL}		/* sentinel */
 };
 
-initregexp()
+int initregexp()
 {
 	object *m, *d;
 

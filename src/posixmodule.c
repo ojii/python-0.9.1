@@ -30,6 +30,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/time.h>
+#include <unistd.h>
 #ifdef SYSV
 #include <dirent.h>
 #define direct dirent
@@ -188,7 +189,7 @@ posix_chmod(self, args)
 	object *args;
 {
 	extern int chmod PROTO((const char *, mode_t));
-	return posix_strint(args, chmod);
+	return posix_strint(args, (int (*)(const char *, int))chmod);
 }
 
 static object *
@@ -197,7 +198,7 @@ posix_getcwd(self, args)
 	object *args;
 {
 	char buf[1026];
-	extern char *getcwd PROTO((char *, int));
+	extern char *getcwd PROTO((char *, size_t));
 	if (!getnoarg(args))
 		return NULL;
 	if (getcwd(buf, sizeof buf) == NULL)
@@ -255,7 +256,7 @@ posix_mkdir(self, args)
 	object *args;
 {
 	extern int mkdir PROTO((const char *, mode_t));
-	return posix_strint(args, mkdir);
+	return posix_strint(args, (int (*)(const char *, int))mkdir);
 }
 
 static object *

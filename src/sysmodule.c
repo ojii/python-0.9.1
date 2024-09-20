@@ -38,6 +38,7 @@ Data members:
 */
 
 #include "allobjects.h"
+#include "pythonmain.h"
 
 #include "sysmodule.h"
 #include "import.h"

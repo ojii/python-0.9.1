@@ -24,6 +24,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 /* Built-in functions */
 
+
 #include "allobjects.h"
 
 #include "node.h"
@@ -36,6 +37,7 @@ OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #include "compile.h" /* For ceval.h */
 #include "ceval.h"
 #include "modsupport.h"
+#include "fgetsintr.h"
 
 static object *
 builtin_abs(self, v)

@@ -246,13 +246,20 @@ static number_methods float_as_number = {
 	float_pos,	/*tp_plus*/
 };
 
+static void
+float_dealloc(v)
+	register floatobject *v;
+{
+    free(v);
+}
+
 typeobject Floattype = {
 	OB_HEAD_INIT(&Typetype)
 	0,
 	"float",
 	sizeof(floatobject),
 	0,
-	free,			/*tp_dealloc*/
+	float_dealloc,			/*tp_dealloc*/
 	float_print,		/*tp_print*/
 	0,			/*tp_getattr*/
 	0,			/*tp_setattr*/
